@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Order BMW M8</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #ffffff;
+        --glass: rgba(255, 210, 218, 0.28);
+        --glass-line: rgba(255, 255, 255, 0.48);
+
+        box-sizing: border-box;
+
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: clamp(14px, 0.45vw + 9.5px, 24px);
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      body {
+        margin: 0;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--ink);
+
+        font-family: "Poppins", system-ui, sans-serif;
+
+        /* Background khusus halaman BMW M8 */
+        background: linear-gradient(
+          160deg,
+          #771b31 0%,
+          #8a3045 48%,
+          #76192f 100%
+        );
+
+        background-attachment: fixed;
+      }
+
+      /* =========================
+         WRAPPER
+      ========================= */
+
+      .wrap {
+        width: 100%;
+        max-width: 68rem;
+
+        padding: 2rem 2.5rem;
+
+        display: grid;
+
+        grid-template-columns: 1.18fr 1fr;
+
+        gap: 3rem;
+
+        align-items: start;
+      }
+
+      /* =========================
+         CARD
+      ========================= */
+
+      .card {
+        background: var(--glass);
+
+        border: 2px solid var(--glass-line);
+
+        border-radius: 1.6rem;
+
+        backdrop-filter: blur(0.6rem);
+
+        -webkit-backdrop-filter: blur(0.6rem);
+
+        box-shadow: 0 0.5rem 1.5rem rgba(50, 0, 12, 0.06);
+      }
+
+      /* =========================
+         GAMBAR BMW M8
+      ========================= */
+
+      .pic {
+        aspect-ratio: 1 / 1;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 0.5rem;
+
+        overflow: hidden;
+      }
+
+      .pic img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        max-height: 100%;
+
+        object-fit: contain;
+
+        filter: drop-shadow(0 1rem 1rem rgba(35, 0, 8, 0.35));
+      }
+
+      .pic img.empty {
+        border: 2px dashed rgba(255, 255, 255, 0.6);
+
+        border-radius: 0.75rem;
+
+        min-height: 9rem;
+
+        padding: 0.5rem;
+
+        color: rgba(255, 255, 255, 0.85);
+
+        font-size: 0.85rem;
+
+        object-fit: none;
+      }
+
+      /* =========================
+         FORM ORDER
+      ========================= */
+
+      .order {
+        padding: 1.6rem 1.4rem 1.8rem;
+      }
+
+      h1 {
+        margin: 0 0 2rem;
+
+        text-align: center;
+
+        font-size: 2rem;
+
+        font-weight: 600;
+      }
+
+      .row {
+        display: flex;
+
+        align-items: center;
+
+        gap: 0.7rem;
+
+        margin-bottom: 1.5rem;
+      }
+
+      .row label {
+        flex: none;
+
+        background: var(--glass);
+
+        border: 2px solid var(--glass-line);
+
+        border-radius: 999px;
+
+        padding: 0.1rem 0.8rem;
+
+        font-size: 1.1rem;
+
+        font-weight: 600;
+
+        white-space: nowrap;
+      }
+
+      .row input {
+        flex: 1;
+
+        min-width: 0;
+
+        background: transparent;
+
+        border: 0;
+
+        border-bottom: 1.5px solid var(--glass-line);
+
+        color: var(--ink);
+
+        font: inherit;
+
+        font-size: 1rem;
+
+        padding: 0.3rem 0.2rem;
+
+        outline: none;
+      }
+
+      .row input:focus {
+        border-bottom-color: #ffffff;
+      }
+
+      .row input::placeholder {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      /* =========================
+         TOTAL BMW M8
+      ========================= */
+
+      .total {
+        display: inline-block;
+
+        margin-top: 0.8rem;
+
+        background: var(--glass);
+
+        border: 2px solid var(--glass-line);
+
+        border-radius: 1.1rem;
+
+        padding: 0.6rem 1.2rem;
+
+        text-align: center;
+      }
+
+      .total b {
+        display: block;
+
+        font-size: 1.15rem;
+
+        font-weight: 600;
+
+        letter-spacing: 0.02em;
+      }
+
+      .total span {
+        display: block;
+
+        font-size: 1.4rem;
+
+        font-weight: 500;
+
+        margin-top: 0.4rem;
+      }
+
+      /* =========================
+         BUTTON
+      ========================= */
+
+      .actions {
+        display: flex;
+
+        justify-content: flex-end;
+
+        margin-top: 1.4rem;
+      }
+
+      .go {
+        background: var(--glass);
+
+        border: 2px solid var(--glass-line);
+
+        border-radius: 999px;
+
+        color: inherit;
+
+        font: inherit;
+
+        font-size: 1.1rem;
+
+        font-weight: 600;
+
+        padding: 0.25rem 1rem;
+
+        cursor: pointer;
+
+        transition:
+          background 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .go:hover {
+        background: rgba(255, 220, 225, 0.48);
+
+        transform: translateY(-2px);
+
+        box-shadow: 0 0.3rem 0.8rem rgba(50, 0, 12, 0.15);
+      }
+
+      .go:active {
+        transform: translateY(0);
+      }
+
+      .go:focus-visible {
+        outline: 3px solid #ffffff;
+
+        outline-offset: 3px;
+      }
+
+      /* =========================
+         RESPONSIVE
+      ========================= */
+
+      @media (max-width: 900px) {
+        body {
+          align-items: flex-start;
+        }
+
+        .wrap {
+          grid-template-columns: 1fr;
+
+          gap: 1.5rem;
+
+          max-width: 35rem;
+
+          padding: 1.5rem 1.1rem;
+        }
+
+        .pic {
+          aspect-ratio: 4 / 3;
+        }
+
+        .pic img {
+          width: 100%;
+
+          max-height: 100%;
+        }
+
+        .order {
+          padding: 1.5rem 1.2rem;
+        }
+
+        h1 {
+          font-size: 1.6rem;
+
+          margin-bottom: 1.4rem;
+        }
+
+        .row label {
+          font-size: 1rem;
+        }
+      }
+
+      /* =========================
+         HP KECIL
+      ========================= */
+
+      @media (max-width: 380px) {
+        .wrap {
+          padding: 1rem 0.8rem;
+
+          gap: 1rem;
+        }
+
+        .pic {
+          aspect-ratio: 4 / 3;
+        }
+
+        .order {
+          padding: 1.2rem 0.9rem;
+        }
+
+        .row {
+          gap: 0.4rem;
+
+          margin-bottom: 1.2rem;
+        }
+
+        .row label {
+          padding: 0.15rem 0.6rem;
+
+          font-size: 0.9rem;
+        }
+
+        .total {
+          padding: 0.6rem 0.8rem;
+        }
+
+        .total span {
+          font-size: 1.2rem;
+        }
+
+        .go {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- NAMA MOBIL YANG DIPESAN -->
+  <body data-car="BMW M8">
+    <main class="wrap">
+      <!-- =========================
+           GAMBAR BMW M8
+      ========================= -->
+
+      <div class="card pic">
+        <img
+          src="bmw.png"
+          alt="BMW M8"
+          title="BMW M8"
+          onerror="this.classList.add('empty')"
+        />
+      </div>
+
+      <!-- =========================
+           FORM PEMESANAN BMW M8
+      ========================= -->
+
+      <form class="card order" id="orderForm">
+        <h1>Order BMW M8</h1>
+
+        <!-- NAMA -->
+
+        <div class="row">
+          <label for="nama">Name :</label>
+
+          <input
+            id="nama"
+            name="nama"
+            type="text"
+            autocomplete="name"
+            placeholder="Masukkan nama"
+            required
+          />
+        </div>
+
+        <!-- GMAIL -->
+
+        <div class="row">
+          <label for="mail">Gmail :</label>
+
+          <input
+            id="mail"
+            name="mail"
+            type="email"
+            autocomplete="email"
+            placeholder="Masukkan Gmail"
+            required
+          />
+        </div>
+
+        <!-- NOMOR TELEPON -->
+
+        <div class="row">
+          <label for="telp">No Telp :</label>
+
+          <input
+            id="telp"
+            name="telp"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="Masukkan nomor telepon"
+            required
+          />
+        </div>
+
+        <!-- =========================
+             TOTAL HARGA BMW M8
+        ========================= -->
+
+        <div class="total">
+          <b>BMW M8</b>
+
+          <span>$430.444,14</span>
+        </div>
+
+        <!-- =========================
+             TOMBOL ORDER
+        ========================= -->
+
+        <div class="actions">
+          <button class="go" type="submit">ORDER BMW M8</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- =========================
+         SWEETALERT2
+    ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- =========================
+         JAVASCRIPT UTAMA
+    ========================= -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

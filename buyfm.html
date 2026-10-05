@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Order Ford Mustang Shelby GT500</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #fff;
+        --glass: rgba(255, 255, 255, 0.22);
+        --glass-line: rgba(255, 255, 255, 0.5);
+
+        box-sizing: border-box;
+
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      html {
+        font-size: clamp(14px, 0.45vw + 9.5px, 24px);
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: var(--ink);
+
+        font-family: Poppins, system-ui, sans-serif;
+
+        background: radial-gradient(
+            ellipse at 45% 85%,
+            #7c7e86 0%,
+            #9fa2ab 38%,
+            #b3b6c0 75%,
+            #bcbfc9 100%
+          )
+          fixed;
+      }
+
+      /* =========================
+         WRAPPER
+      ========================= */
+
+      .wrap {
+        width: 100%;
+        max-width: 68rem;
+
+        padding: 2rem 2.5rem;
+
+        display: grid;
+
+        grid-template-columns: 1.18fr 1fr;
+
+        gap: 3rem;
+
+        align-items: start;
+      }
+
+      /* =========================
+         CARD
+      ========================= */
+
+      .card {
+        background: var(--glass);
+
+        border: 1.5px solid var(--glass-line);
+
+        border-radius: 1.6rem;
+
+        backdrop-filter: blur(0.4rem);
+
+        -webkit-backdrop-filter: blur(0.4rem);
+      }
+
+      /* =========================
+         GAMBAR FORD MUSTANG
+      ========================= */
+
+      .pic {
+        aspect-ratio: 1 / 1;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+
+        overflow: hidden;
+      }
+
+      .pic img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+
+        filter: drop-shadow(0 1rem 1rem rgba(0, 0, 0, 0.35));
+      }
+
+      .pic img.empty {
+        border: 2px dashed rgba(255, 255, 255, 0.6);
+
+        border-radius: 0.75rem;
+
+        min-height: 9rem;
+
+        padding: 0.5rem;
+
+        color: rgba(255, 255, 255, 0.85);
+
+        font-size: 0.85rem;
+
+        object-fit: none;
+      }
+
+      /* =========================
+         ORDER FORM
+      ========================= */
+
+      .order {
+        padding: 1.6rem 1.4rem 1.8rem;
+      }
+
+      h1 {
+        margin: 0 0 2rem;
+
+        text-align: center;
+
+        font-size: 2rem;
+
+        font-weight: 700;
+      }
+
+      .row {
+        display: flex;
+
+        align-items: center;
+
+        gap: 0.7rem;
+
+        margin-bottom: 1.5rem;
+      }
+
+      .row label {
+        flex: none;
+
+        background: var(--glass);
+
+        border: 1.5px solid var(--glass-line);
+
+        border-radius: 999px;
+
+        padding: 0.1rem 0.8rem;
+
+        font-size: 1.1rem;
+
+        font-weight: 600;
+
+        white-space: nowrap;
+      }
+
+      .row input {
+        flex: 1;
+
+        min-width: 0;
+
+        background: transparent;
+
+        border: 0;
+
+        border-bottom: 1.5px solid var(--glass-line);
+
+        color: var(--ink);
+
+        font: inherit;
+
+        font-size: 1rem;
+
+        padding: 0.3rem 0.2rem;
+
+        outline: none;
+      }
+
+      .row input:focus {
+        border-bottom-color: #fff;
+      }
+
+      .row input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* =========================
+         TOTAL HARGA
+      ========================= */
+
+      .total {
+        display: inline-block;
+
+        margin-top: 0.8rem;
+
+        background: var(--glass);
+
+        border: 1.5px solid var(--glass-line);
+
+        border-radius: 1.1rem;
+
+        padding: 0.6rem 1.2rem;
+
+        text-align: center;
+      }
+
+      .total b {
+        display: block;
+
+        font-size: 1.15rem;
+
+        font-weight: 600;
+
+        letter-spacing: 0.02em;
+      }
+
+      .total span {
+        display: block;
+
+        font-size: 1.4rem;
+
+        font-weight: 500;
+
+        margin-top: 0.4rem;
+      }
+
+      /* =========================
+         BUTTON
+      ========================= */
+
+      .actions {
+        display: flex;
+
+        justify-content: flex-end;
+
+        margin-top: 1.4rem;
+      }
+
+      .go {
+        background: var(--glass);
+
+        border: 1.5px solid var(--glass-line);
+
+        border-radius: 999px;
+
+        color: inherit;
+
+        font: inherit;
+
+        font-size: 1.1rem;
+
+        font-weight: 600;
+
+        padding: 0.25rem 1rem;
+
+        cursor: pointer;
+
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+
+      .go:hover {
+        background: rgba(255, 255, 255, 0.4);
+
+        transform: translateY(-2px);
+      }
+
+      .go:focus-visible {
+        outline: 3px solid #fff;
+
+        outline-offset: 3px;
+      }
+
+      /* =========================
+         PESAN
+      ========================= */
+
+      .msg {
+        min-height: 1.5rem;
+
+        margin: 1rem 0 0;
+
+        text-align: center;
+
+        font-size: 0.9rem;
+
+        font-weight: 500;
+      }
+
+      /* =========================
+         RESPONSIVE
+      ========================= */
+
+      @media (max-width: 900px) {
+        .wrap {
+          grid-template-columns: 1fr;
+
+          gap: 1.5rem;
+
+          padding: 1.2rem 1.1rem;
+        }
+
+        .pic {
+          aspect-ratio: 4 / 3;
+        }
+
+        h1 {
+          font-size: 1.6rem;
+
+          margin-bottom: 1.4rem;
+        }
+
+        .row label {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <!-- MOBIL YANG DIPESAN -->
+  <body data-car="Ford Mustang Shelby GT500">
+    <main class="wrap">
+      <!-- =========================
+           GAMBAR FORD MUSTANG
+      ========================= -->
+
+      <div class="card pic">
+        <img
+          src="mustang_PNG40656.png"
+          alt="Ford Mustang Shelby GT500"
+          title="Ford Mustang Shelby GT500"
+          onerror="this.classList.add('empty')"
+        />
+      </div>
+
+      <!-- =========================
+           FORM ORDER FORD MUSTANG
+      ========================= -->
+
+      <form class="card order" id="orderForm">
+        <h1>Order Ford Mustang</h1>
+
+        <!-- NAMA -->
+
+        <div class="row">
+          <label for="nama">Name :</label>
+
+          <input
+            id="nama"
+            name="nama"
+            type="text"
+            autocomplete="name"
+            placeholder="Masukkan nama"
+            required
+          />
+        </div>
+
+        <!-- GMAIL -->
+
+        <div class="row">
+          <label for="mail">Gmail :</label>
+
+          <input
+            id="mail"
+            name="mail"
+            type="email"
+            autocomplete="email"
+            placeholder="Masukkan Gmail"
+            required
+          />
+        </div>
+
+        <!-- NOMOR TELEPON -->
+
+        <div class="row">
+          <label for="telp">No Telp :</label>
+
+          <input
+            id="telp"
+            name="telp"
+            type="tel"
+            autocomplete="tel"
+            inputmode="tel"
+            placeholder="Masukkan nomor telepon"
+            required
+          />
+        </div>
+
+        <!-- =========================
+             TOTAL HARGA FORD MUSTANG
+        ========================= -->
+
+        <div class="total">
+          <b>Ford Mustang Shelby GT500</b>
+
+          <span>$559.018,36</span>
+        </div>
+
+        <!-- =========================
+             TOMBOL ORDER
+        ========================= -->
+
+        <div class="actions">
+          <button class="go" type="submit">ORDER FORD MUSTANG</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- =========================
+         SWEETALERT2
+    ========================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- =========================
+         JAVASCRIPT UTAMA
+    ========================= -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

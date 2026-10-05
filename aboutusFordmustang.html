@@ -1,0 +1,335 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>About Us – Ford Mustang</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #fff;
+        --glass: rgba(255, 255, 255, 0.2);
+        --glass-line: rgba(255, 255, 255, 0.35);
+
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      html {
+        font-size: clamp(14px, 0.45vw + 9.5px, 24px);
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: Poppins, system-ui, sans-serif;
+
+        background: #444;
+
+        background: radial-gradient(
+            ellipse at 55% 35%,
+            #a0a0a0 0%,
+            #737373 40%,
+            #454545 78%,
+            #343434 100%
+          )
+          fixed;
+      }
+
+      /* =========================
+     HALAMAN UTAMA
+  ========================= */
+
+      .page {
+        max-width: 85rem;
+        margin: 0 auto;
+        padding: 1.5rem 2.5rem 2rem;
+
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+      }
+
+      /* =========================
+     NAVIGASI BACK & NEXT
+  ========================= */
+
+      .navigation {
+        position: absolute;
+
+        top: 1.5rem;
+        right: 2.5rem;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-end;
+
+        gap: 0.5rem;
+      }
+
+      .navigation a {
+        color: inherit;
+        text-decoration: none;
+
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        letter-spacing: 0.03em;
+
+        transition: 0.3s ease;
+      }
+
+      .navigation a:hover {
+        opacity: 0.7;
+        transform: translateX(-3px);
+      }
+
+      .navigation a:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 4px;
+      }
+
+      /* =========================
+     ABOUT
+  ========================= */
+
+      .about {
+        width: min(54rem, 72%);
+
+        background: var(--glass);
+
+        border: 1px solid var(--glass-line);
+
+        border-radius: 1rem;
+
+        padding: 1.4rem 1.5rem;
+
+        backdrop-filter: blur(0.3rem);
+      }
+
+      .about p {
+        margin: 0 0 1.4rem;
+
+        font-size: 1.02rem;
+
+        font-weight: 500;
+
+        line-height: 1.6;
+      }
+
+      .about p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* =========================
+     BAGIAN FOTO & LOGO
+  ========================= */
+
+      .bottom {
+        margin-top: auto;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: flex-end;
+
+        gap: 2rem;
+
+        padding-top: 2rem;
+      }
+
+      .photo {
+        display: block;
+
+        width: min(36rem, 46%);
+
+        height: auto;
+
+        margin-left: -1.5rem;
+
+        filter: drop-shadow(0 1.5rem 1.5rem rgba(0, 0, 0, 0.45));
+      }
+
+      .logo {
+        display: block;
+
+        width: min(30rem, 42%);
+
+        height: auto;
+
+        object-fit: contain;
+
+        margin-bottom: 1rem;
+      }
+
+      /* =========================
+     JIKA GAMBAR GAGAL DIMUAT
+  ========================= */
+
+      img.empty {
+        border: 2px dashed rgba(255, 255, 255, 0.5);
+
+        border-radius: 0.75rem;
+
+        min-height: 6rem;
+
+        min-width: 12rem;
+
+        padding: 0.5rem;
+
+        color: rgba(255, 255, 255, 0.75);
+
+        font-size: 0.85rem;
+
+        object-fit: none;
+      }
+
+      .photo.empty {
+        min-height: 12rem;
+      }
+
+      /* =========================
+     RESPONSIVE / HP
+  ========================= */
+
+      @media (max-width: 900px) {
+        .page {
+          padding: 1rem 1.1rem 1.5rem;
+        }
+
+        .navigation {
+          top: 1rem;
+          right: 1.1rem;
+
+          gap: 0.3rem;
+        }
+
+        .navigation a {
+          font-size: 1.1rem;
+        }
+
+        .about {
+          width: 100%;
+
+          margin-top: 2.6rem;
+
+          padding: 1.1rem;
+        }
+
+        .about p {
+          font-size: 0.92rem;
+        }
+
+        .bottom {
+          flex-direction: column;
+
+          align-items: center;
+
+          gap: 1rem;
+        }
+
+        .photo {
+          width: 100%;
+
+          margin-left: 0;
+        }
+
+        .logo {
+          width: 78%;
+
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- =========================
+       NAVIGASI
+  ========================= -->
+
+      <div class="navigation">
+        <!-- Tombol kembali -->
+        <a class="back" href="fordmustang.html"> BACK </a>
+
+        <!-- Tombol menuju BMW M8 -->
+        <a class="next" href="bmw.html"> NEXT </a>
+      </div>
+
+      <!-- =========================
+       ABOUT US
+  ========================= -->
+
+      <section class="about" aria-label="Tentang Ford Mustang GT500">
+        <p>
+          Ford Mustang GT500 merupakan representasi dari muscle car Amerika yang
+          menggabungkan desain agresif dengan performa luar biasa. Dengan
+          tampilannya yang berotot dan suara mesin yang garang, Mustang GT500
+          memiliki aura yang sulit untuk diabaikan.
+        </p>
+
+        <p>
+          Mobil ini cocok untuk kalian yang menyukai gaya garang, berani, dan
+          penuh karakter. Rasanya seperti membawa sepotong budaya otomotif
+          Amerika ke jalan raya.
+        </p>
+
+        <p>
+          Kalau hidup kalian terasa terlalu monoton, Mustang GT500 mungkin bisa
+          menjadi teman yang tepat. Atau bahkan mobil ini cocok buat bangunin
+          teman yang bilang mau OTW padahal masih rebahan di kamar. Cocok buat
+          geber-geber depan rumahnya.
+        </p>
+      </section>
+
+      <!-- =========================
+       FOTO DAN LOGO
+  ========================= -->
+
+      <div class="bottom">
+        <img
+          class="photo"
+          src="mustang_PNG40656.png"
+          alt="Ford Mustang Shelby GT500"
+          onerror="this.classList.add('empty')"
+        />
+
+        <img
+          class="logo"
+          src="logo fm.png"
+          alt="Ford Mustang"
+          onerror="this.classList.add('empty')"
+        />
+      </div>
+    </div>
+    ```
+  </body>
+</html>

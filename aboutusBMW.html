@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>About Us – BMW M8</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #fff;
+        --glass: rgba(255, 255, 255, 0.2);
+        --glass-line: rgba(255, 255, 255, 0.35);
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      html {
+        font-size: clamp(14px, 0.45vw + 9.5px, 24px);
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* =========================
+     BODY
+  ========================= */
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: Poppins, system-ui, sans-serif;
+        background: #701c2c;
+        background: radial-gradient(
+            ellipse at 55% 35%,
+            #d9a3ac 0%,
+            #a8525f 30%,
+            #7e2335 65%,
+            #621627 100%
+          )
+          fixed;
+      }
+
+      /* =========================
+     PAGE
+  ========================= */
+
+      .page {
+        max-width: 85rem;
+        margin: 0 auto;
+        padding: 1.5rem 2.5rem 2rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      /* =========================
+     NAVIGASI
+  ========================= */
+
+      .navigation {
+        position: absolute;
+        top: 1.5rem;
+        right: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        z-index: 10;
+      }
+
+      .navigation a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        transition: 0.3s ease;
+      }
+
+      .navigation a:hover {
+        opacity: 0.7;
+        transform: translateX(-3px);
+      }
+
+      .navigation a:focus-visible {
+        outline: 3px solid #fff;
+
+        outline-offset: 4px;
+      }
+
+      /* =========================
+     ABOUT
+  ========================= */
+
+      .about {
+        width: min(54rem, 72%);
+        background: var(--glass);
+        border: 1px solid var(--glass-line);
+        border-radius: 1rem;
+        padding: 1.4rem 1.5rem;
+        backdrop-filter: blur(0.3rem);
+      }
+
+      .about p {
+        margin: 0 0 1.4rem;
+        font-size: 1.02rem;
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      .about p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* =========================
+     FOTO & LOGO
+  ========================= */
+
+      .bottom {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 2rem;
+        padding-top: 2rem;
+      }
+
+      .photo {
+        display: block;
+        width: min(36rem, 46%);
+        height: auto;
+        margin-left: -1.5rem;
+        filter: drop-shadow(0 1.5rem 1.5rem rgba(0, 0, 0, 0.45));
+      }
+
+      .logo {
+        display: block;
+        width: min(20rem, 30%);
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+      }
+
+      /* =========================
+     GAMBAR 
+  ========================= */
+
+      img.empty {
+        border: 2px dashed rgba(255, 255, 255, 0.5);
+        border-radius: 0.75rem;
+        min-height: 6rem;
+        min-width: 12rem;
+        padding: 0.5rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.85rem;
+        object-fit: none;
+      }
+
+      .photo.empty {
+        min-height: 12rem;
+      }
+
+      /* =========================
+     RESPONSIVE
+  ========================= */
+
+      @media (max-width: 900px) {
+        .page {
+          padding: 1rem 1.1rem 1.5rem;
+        }
+        .navigation {
+          top: 1rem;
+          right: 1.1rem;
+          gap: 0.3rem;
+        }
+
+        .navigation a {
+          font-size: 1.1rem;
+        }
+        .about {
+          width: 100%;
+          margin-top: 2.6rem;
+          padding: 1.1rem;
+        }
+
+        .about p {
+          font-size: 0.92rem;
+        }
+
+        .bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .photo {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        .logo {
+          width: 78%;
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- =========================
+       NAVIGASI
+  ========================= -->
+
+      <div class="navigation">
+        <!-- Kembali ke halaman BMW M8 -->
+        <a class="back" href="bmw.html"> BACK </a>
+
+        <!-- Lanjut ke Koenigsegg Jesko Attack -->
+        <a class="next" href="koenigsegg.html"> NEXT </a>
+      </div>
+
+      <!-- =========================
+       ABOUT BMW M8
+  ========================= -->
+
+      <section class="about" aria-label="Tentang BMW M8">
+        <p>
+          Berbeda dengan Mustang yang memiliki karakter muscle car, BMW M8
+          membawa perpaduan kemewahan, kenyamanan, teknologi dan performa.
+        </p>
+
+        <p>
+          Dari luar terlihat elegan dan berkelas. Namun, di balik tampilannya
+          yang cukup kalem, tersimpan tenaga yang siap mengubah perjalanan
+          menjadi pengalaman yang jauh lebih seru. Mobil ini sangat cocok buat
+          harian keliling kota menikmati langit sore yang indah.
+        </p>
+
+        <p>
+          Mobil ini membuktikan bahwa sebuah mobil tidak harus terlihat seperti
+          monster jalanan untuk memiliki performa yang tinggi.
+        </p>
+      </section>
+
+      <!-- =========================
+       FOTO DAN LOGO
+  ========================= -->
+
+      <div class="bottom">
+        <img
+          class="photo"
+          src="bmw.png"
+          alt="BMW M8"
+          onerror="this.classList.add('empty')"
+        />
+
+        <img
+          class="logo"
+          src="logo bmw.png"
+          alt="BMW M"
+          onerror="this.classList.add('empty')"
+        />
+      </div>
+    </div>
+    ```
+  </body>
+</html>

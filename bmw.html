@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>BMW M8 – Cool Cars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ink: #fff;
+        --glass: rgba(255, 255, 255, 0.14);
+        --glass-line: rgba(255, 255, 255, 0.3);
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+
+      html {
+        font-size: clamp(14px, 0.45vw + 9.5px, 24px);
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* =========================
+     BODY
+  ========================= */
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: Poppins, system-ui, sans-serif;
+        background: #701c2c;
+        background: radial-gradient(
+            ellipse at 50% 42%,
+            #e4bcc2 0%,
+            #b8737e 26%,
+            #8a2a3a 62%,
+            #6c1a2a 100%
+          )
+          fixed;
+      }
+
+      /* =========================
+     PAGE
+  ========================= */
+
+      .page {
+        max-width: 85rem;
+        margin: 0 auto;
+        padding: 1.5rem 2.5rem 3rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* =========================
+     NAVIGASI
+  ========================= */
+
+      nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      nav a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        opacity: 0.7;
+      }
+
+      nav a:focus-visible {
+        outline: 3px solid #fff;
+        outline-offset: 4px;
+      }
+
+      .back,
+      .next {
+        font-weight: 600;
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+        transition: 0.3s ease;
+      }
+
+      .next {
+        text-align: right;
+      }
+
+      /* =========================
+     MENU TENGAH
+  ========================= */
+
+      .menu {
+        display: flex;
+        gap: 2.5rem;
+        font-size: 1rem;
+      }
+      .menu a {
+        font-weight: 400;
+      }
+      .menu a.on {
+        font-weight: 700;
+      }
+
+      /* =========================
+     AREA MOBIL
+  ========================= */
+
+      .stage {
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* =========================
+     LOGO BMW
+  ========================= */
+
+      .logo {
+        display: block;
+        width: min(19rem, 30%);
+        height: auto;
+        object-fit: contain;
+        border-radius: 0.5rem;
+      }
+
+      /* =========================
+     FOTO BMW
+  ========================= */
+
+      .photo {
+        display: block;
+        width: min(60rem, 76%);
+        height: auto;
+        margin: -1.5rem auto 0;
+        position: relative;
+        z-index: 1;
+        transform: translateX(-4%);
+        filter: drop-shadow(0 1.5rem 1.5rem rgba(0, 0, 0, 0.4));
+      }
+
+      /* =========================
+     STATISTIK
+  ========================= */
+
+      .stats {
+        position: absolute;
+        right: 0;
+        bottom: 2%;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+        width: min(23rem, 34%);
+      }
+
+      .st {
+        background: var(--glass);
+        border: 1px solid var(--glass-line);
+        border-radius: 0.9rem;
+        padding: 0.9rem 0.6rem;
+        text-align: center;
+        backdrop-filter: blur(0.3rem);
+      }
+
+      .st b {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+
+      .st span {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 400;
+        opacity: 0.85;
+        margin-top: 0.3rem;
+      }
+
+      /* =========================
+     GAMBAR ERROR
+  ========================= */
+
+      img.empty {
+        border: 2px dashed rgba(255, 255, 255, 0.5);
+        border-radius: 0.75rem;
+        min-height: 6rem;
+        min-width: 12rem;
+        padding: 0.5rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.85rem;
+        object-fit: none;
+      }
+      .photo.empty {
+        min-height: 16rem;
+      }
+
+      /* =========================
+     RESPONSIVE
+  ========================= */
+
+      @media (max-width: 900px) {
+        .page {
+          padding: 1rem 1.1rem 2rem;
+        }
+        .back,
+        .next {
+          font-size: 1.1rem;
+        }
+        .menu {
+          gap: 1rem;
+          font-size: 0.8rem;
+        }
+        .logo {
+          width: 84%;
+        }
+
+        .photo {
+          width: 100%;
+          margin-top: -2.5rem;
+          transform: none;
+        }
+
+        .stats {
+          position: static;
+          width: 100%;
+          margin-top: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+     HALAMAN BMW M8
+========================= -->
+
+    <div class="page">
+      <!-- =========================
+       NAVIGASI
+  ========================= -->
+
+      <nav aria-label="Navigasi utama">
+        <!-- Kembali ke Ford Mustang -->
+        <a class="back" href="aboutusFordmustang.html"> BACK </a>
+
+        <!-- Menu -->
+        <div class="menu">
+          <a class="on" href="#"> Vehicle </a>
+          <a class="on" href="#"> Order </a>
+          <a href="aboutusBMW.html"> About Us </a>
+        </div>
+        <a class="next" href="aboutusBMW.html"> NEXT </a>
+      </nav>
+
+      <!-- =========================
+       BMW M8
+  ========================= -->
+
+      <main class="stage">
+        <!-- Logo BMW -->
+        <img
+          class="logo"
+          src="logo bmw.png"
+          alt="BMW M"
+          onerror="this.classList.add('empty')"
+        />
+
+        <!-- Foto BMW -->
+        <img
+          class="photo"
+          src="bmw.png"
+          alt="BMW M8"
+          onerror="this.classList.add('empty')"
+        />
+
+        <!-- =========================
+         INFORMASI BMW
+    ========================= -->
+
+        <div class="stats">
+          <div class="st">
+            <b>Top Speed</b>
+            <span> ≈ 250–305 km/h </span>
+          </div>
+
+          <div class="st">
+            <b>Engine</b>
+            <span> Twin Turbo V8 4.4L </span>
+          </div>
+
+          <div class="st">
+            <b>750 Nm</b>
+            <span> 1.800–5.860 rpm </span>
+          </div>
+
+          <div class="st">
+            <b>625 HP</b>
+            <span> Peak Power </span>
+          </div>
+        </div>
+      </main>
+    </div>
+    ```
+  </body>
+</html>
